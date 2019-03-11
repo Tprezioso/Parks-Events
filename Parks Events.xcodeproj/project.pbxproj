@@ -55,13 +55,29 @@
 			isa = PBXGroup;
 			children = (
 				9FB30B3922345A71007A530C /* AppDelegate.swift */,
-				9FB30B3B22345A71007A530C /* ViewController.swift */,
-				9FB30B3D22345A71007A530C /* Main.storyboard */,
+				9FB30B4B22346CCD007A530C /* Controller */,
+				9FB30B4C22346CDC007A530C /* View */,
 				9FB30B4022345A73007A530C /* Assets.xcassets */,
-				9FB30B4222345A73007A530C /* LaunchScreen.storyboard */,
 				9FB30B4522345A73007A530C /* Info.plist */,
 			);
 			path = "Parks Events";
+			sourceTree = "<group>";
+		};
+		9FB30B4B22346CCD007A530C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9FB30B3B22345A71007A530C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9FB30B4C22346CDC007A530C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FB30B3D22345A71007A530C /* Main.storyboard */,
+				9FB30B4222345A73007A530C /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
