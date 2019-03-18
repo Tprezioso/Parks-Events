@@ -13,9 +13,16 @@ import SwiftyJSON
 class TodaysEventsTableViewController: UITableViewController {
 
     var test = ["cookie", "monster", "big", "bird"]
-    var apiURL = ""
+    var apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
+    let date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let someDateTime = formatter.string(from: date)
+        apiURL.append(someDateTime)
+        workingOnIt()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,9 +45,10 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     func workingOnIt() {
+        
         Alamofire.request(apiURL, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
-                print(response)
+                print(response.result.value!)
                 
             }
             
