@@ -35,5 +35,9 @@ class TodaysEventsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    func todayEvents() {
+        <#function body#>
+    }
 
 }
