@@ -22,7 +22,7 @@ class TodaysEventsTableViewController: UITableViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         let someDateTime = formatter.string(from: date)
         apiURL.append(someDateTime)
-        workingOnIt()
+        currentDayEventsCall(url: apiURL)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,14 +44,4 @@ class TodaysEventsTableViewController: UITableViewController {
         return cell
     }
     
-    func workingOnIt() {
-        
-        Alamofire.request(apiURL, method: .get).responseJSON { (response) in
-            if response.result.isSuccess {
-                print(response.result.value!)
-                
-            }
-            
-        }
-    }
 }

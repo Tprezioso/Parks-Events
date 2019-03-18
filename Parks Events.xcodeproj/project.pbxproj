@@ -14,6 +14,7 @@
 		9FB30B4122345A73007A530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB30B4022345A73007A530C /* Assets.xcassets */; };
 		9FB30B4422345A73007A530C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB30B4222345A73007A530C /* LaunchScreen.storyboard */; };
 		9FB30B4E2238681B007A530C /* TodaysEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */; };
+		9FB30B5022403CE9007A530C /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B4F22403CE9007A530C /* APICalls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9FB30B4322345A73007A530C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FB30B4522345A73007A530C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysEventsTableViewController.swift; sourceTree = "<group>"; };
+		9FB30B4F22403CE9007A530C /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				0CCDD4605022166ECEE811E9 /* Pods-Parks Events.debug.xcconfig */,
 				9FAE0132E7389477D84B88F8 /* Pods-Parks Events.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -94,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */,
+				9FB30B4F22403CE9007A530C /* APICalls.swift */,
 				9FB30B3B22345A71007A530C /* ViewController.swift */,
 			);
 			path = Controller;
@@ -232,6 +234,7 @@
 			files = (
 				9FB30B4E2238681B007A530C /* TodaysEventsTableViewController.swift in Sources */,
 				9FB30B3C22345A71007A530C /* ViewController.swift in Sources */,
+				9FB30B5022403CE9007A530C /* APICalls.swift in Sources */,
 				9FB30B3A22345A71007A530C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
