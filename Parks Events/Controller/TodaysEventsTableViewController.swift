@@ -13,6 +13,7 @@ import SwiftyJSON
 class TodaysEventsTableViewController: UITableViewController {
 
     var test = ["cookie", "monster", "big", "bird"]
+    var apiURL = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +38,7 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     func workingOnIt() {
-        Alamofire.request(wikiURL, method: .get, parameters: params).responseJSON { (response) in
+        Alamofire.request(apiURL, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
                 print(response)
                 
