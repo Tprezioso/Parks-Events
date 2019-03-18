@@ -36,8 +36,13 @@ class TodaysEventsTableViewController: UITableViewController {
         return cell
     }
     
-    func todayEvents() {
-        <#function body#>
+    func workingOnIt() {
+        Alamofire.request(wikiURL, method: .get, parameters: params).responseJSON { (response) in
+            if response.result.isSuccess {
+                print(response)
+                
+            }
+            
+        }
     }
-
 }
