@@ -20,10 +20,7 @@ class TodaysEventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let someDateTime = formatter.string(from: date)
-        apiURL.append(someDateTime)
+        getDateForURL()
         getParksEvent()
         
         print(eventsArray)
@@ -33,6 +30,14 @@ class TodaysEventsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func getDateForURL() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let someDateTime = formatter.string(from: date)
+        apiURL.append(someDateTime)
+
     }
     
     func getParksEvent() {
