@@ -8,14 +8,22 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-func currentDayEventsCall(url: String) {
-    Alamofire.request(url, method: .get).responseJSON { (response) in
-        if response.result.isSuccess {
-            print(response.result.value!)
+class APICalls {
+
+    typealias WebServiceResponse = ([[String: String]]?) -> Void
+    
+    func currentDayEventsCall(url: String, completion: @escaping WebServiceResponse) {
+        Alamofire.request(url, method: .get).responseJSON { (response) in
+            if response.result.isSuccess {
+                if let eventJSON = response.result.value! as? [[String: String]] {
+                    completion(eventJSON)
+                }
+            }
             
         }
-        
     }
 
 }
+
