@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class TodaysEventsTableViewController: UITableViewController {
 
-    var test = ["cookie", "monster", "big", "bird"]
     var apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
     let date = Date()
     var eventsArray = [[String : String]]()
@@ -23,13 +20,6 @@ class TodaysEventsTableViewController: UITableViewController {
         getDateForURL()
         getParksEvent()
         
-        print(eventsArray)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func getDateForURL() {
@@ -56,7 +46,6 @@ class TodaysEventsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
         cell.textLabel?.text = eventsArray[indexPath.row]["title"]
 
