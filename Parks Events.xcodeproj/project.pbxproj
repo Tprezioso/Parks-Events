@@ -83,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB30B3922345A71007A530C /* AppDelegate.swift */,
+				9FB30B512241B44F007A530C /* Model */,
 				9FB30B4B22346CCD007A530C /* Controller */,
 				9FB30B4C22346CDC007A530C /* View */,
 				9FB30B4022345A73007A530C /* Assets.xcassets */,
@@ -95,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */,
-				9FB30B4F22403CE9007A530C /* APICalls.swift */,
 				9FB30B3B22345A71007A530C /* ViewController.swift */,
 			);
 			path = Controller;
@@ -108,6 +108,14 @@
 				9FB30B4222345A73007A530C /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9FB30B512241B44F007A530C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FB30B4F22403CE9007A530C /* APICalls.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
