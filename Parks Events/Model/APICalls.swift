@@ -15,6 +15,7 @@ class APICalls {
     typealias WebServiceResponse = ([[String: String]]?) -> Void
     
     let headers: HTTPHeaders = [
+        
         "X-App-Token": MY_API_KEY,
         "Accept": "application/json"
     ]
