@@ -34,6 +34,13 @@ class TodaysEventsTableViewController: UITableViewController {
         DispatchQueue.main.async {
             self.apiCall.currentDayEventsCall(url: self.apiURL) { (json) in
                 self.eventsArray = json!
+                print(self.eventsArray)
+                if self.eventsArray == [] as! [[String : String]] {
+                    self.navigationItem.title = "No Events Today"
+                } else {
+                    self.navigationItem.title = "Park Events"
+                }
+
                 self.tableView.reloadData()
             }
         }

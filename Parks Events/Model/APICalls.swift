@@ -14,6 +14,11 @@ class APICalls {
 
     typealias WebServiceResponse = ([[String: String]]?) -> Void
     
+    let headers: HTTPHeaders = [
+        "X-App-Token": MY_API_KEY,
+        "Accept": "application/json"
+    ]
+    
     func currentDayEventsCall(url: String, completion: @escaping WebServiceResponse) {
         Alamofire.request(url, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
