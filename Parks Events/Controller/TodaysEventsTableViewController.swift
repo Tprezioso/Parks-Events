@@ -33,6 +33,7 @@ class TodaysEventsTableViewController: UITableViewController {
     func getParksEvent() {
         DispatchQueue.main.async {
             self.apiCall.currentDayEventsCall(url: self.apiURL) { (json) in
+                self.eventsArray = [["" : ""]]
                 self.eventsArray = json!
                 print(self.eventsArray)
                 if self.eventsArray == [] as! [[String : String]] {
@@ -68,12 +69,21 @@ class TodaysEventsTableViewController: UITableViewController {
         
         myDatePicker.datePickerMode = UIDatePicker.Mode.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
-        let selectedDate = dateFormatter.string(from: myDatePicker.date)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
         alertController.view.addSubview(myDatePicker)
-        let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
+            DispatchQueue.main.async {
+                let selectedDate = dateFormatter.string(from: myDatePicker.date)
+                self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
+                self.apiURL.append(selectedDate)
+                self.getParksEvent()
+                
+            }
+            
+        })
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         alertController.addAction(somethingAction)
         alertController.addAction(cancelAction)
