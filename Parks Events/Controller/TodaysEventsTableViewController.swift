@@ -59,6 +59,27 @@ class TodaysEventsTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        let myDatePicker: UIDatePicker = UIDatePicker()
+        // setting properties of the datePicker
+        myDatePicker.timeZone = NSTimeZone.local
+        
+        myDatePicker.frame = CGRect(origin: CGPoint(x: 0,y :15), size: CGSize(width: 270, height: 200))
+        
+        myDatePicker.datePickerMode = UIDatePicker.Mode.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        let selectedDate = dateFormatter.string(from: myDatePicker.date)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alertController.view.addSubview(myDatePicker)
+        let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(somethingAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion:{})
+    
+    }
     /*
      // MARK: - Navigation
      

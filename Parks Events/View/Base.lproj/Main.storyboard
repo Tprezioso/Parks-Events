@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" id="4Mi-cr-dPt">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="cH5-4O-H2a">
                             <connections>
-                                <segue destination="Ict-x8-gAB" kind="show" id="iGm-bh-ZTi"/>
+                                <action selector="searchButtonPressed:" destination="ihw-Hs-ToM" id="DEk-Hl-rRs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
