@@ -15,8 +15,6 @@
 		9FB30B4422345A73007A530C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB30B4222345A73007A530C /* LaunchScreen.storyboard */; };
 		9FB30B4E2238681B007A530C /* TodaysEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */; };
 		9FB30B5022403CE9007A530C /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B4F22403CE9007A530C /* APICalls.swift */; };
-		9FB30B53224303BA007A530C /* SearchEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B52224303BA007A530C /* SearchEventTableViewController.swift */; };
-		9FB30B55224303EF007A530C /* SearchDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B54224303EF007A530C /* SearchDetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +30,6 @@
 		9FB30B4522345A73007A530C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysEventsTableViewController.swift; sourceTree = "<group>"; };
 		9FB30B4F22403CE9007A530C /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
-		9FB30B52224303BA007A530C /* SearchEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventTableViewController.swift; sourceTree = "<group>"; };
-		9FB30B54224303EF007A530C /* SearchDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +97,6 @@
 			children = (
 				9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */,
 				9FB30B3B22345A71007A530C /* ViewController.swift */,
-				9FB30B52224303BA007A530C /* SearchEventTableViewController.swift */,
-				9FB30B54224303EF007A530C /* SearchDetailedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,8 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB30B4E2238681B007A530C /* TodaysEventsTableViewController.swift in Sources */,
-				9FB30B53224303BA007A530C /* SearchEventTableViewController.swift in Sources */,
-				9FB30B55224303EF007A530C /* SearchDetailedViewController.swift in Sources */,
 				9FB30B3C22345A71007A530C /* ViewController.swift in Sources */,
 				9FB30B5022403CE9007A530C /* APICalls.swift in Sources */,
 				9FB30B3A22345A71007A530C /* AppDelegate.swift in Sources */,
