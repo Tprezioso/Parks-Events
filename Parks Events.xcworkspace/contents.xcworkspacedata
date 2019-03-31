@@ -4,6 +4,65 @@
    <FileRef
       location = "group:Parks Events.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Parks Events"
+      name = "Parks Events">
+      <Group
+         location = "group:Assets.xcassets"
+         name = "Assets.xcassets">
+         <Group
+            location = "group:AppIcon.appiconset"
+            name = "AppIcon.appiconset">
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Base.lproj"
+         name = "Base.lproj">
+      </Group>
+      <Group
+         location = "group:Controller"
+         name = "Controller">
+         <FileRef
+            location = "group:DetailTableViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TodaysEventsTableViewController.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Model"
+         name = "Model">
+         <FileRef
+            location = "group:APICalls.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:View"
+         name = "View">
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.storyboard">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:AppDelegate.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

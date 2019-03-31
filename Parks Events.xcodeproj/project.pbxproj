@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0AA1FB9E7451B8F169EDFCDA /* Pods_Parks_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504FCA79F475C9693EFE0388 /* Pods_Parks_Events.framework */; };
+		9F3B9140225122DB00BDDDFB /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B913F225122DB00BDDDFB /* DetailTableViewController.swift */; };
 		9FB30B3A22345A71007A530C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B3922345A71007A530C /* AppDelegate.swift */; };
-		9FB30B3C22345A71007A530C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB30B3B22345A71007A530C /* ViewController.swift */; };
 		9FB30B3F22345A71007A530C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB30B3D22345A71007A530C /* Main.storyboard */; };
 		9FB30B4122345A73007A530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB30B4022345A73007A530C /* Assets.xcassets */; };
 		9FB30B4422345A73007A530C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB30B4222345A73007A530C /* LaunchScreen.storyboard */; };
@@ -20,10 +20,10 @@
 /* Begin PBXFileReference section */
 		0CCDD4605022166ECEE811E9 /* Pods-Parks Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parks Events.debug.xcconfig"; path = "Target Support Files/Pods-Parks Events/Pods-Parks Events.debug.xcconfig"; sourceTree = "<group>"; };
 		504FCA79F475C9693EFE0388 /* Pods_Parks_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parks_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3B913F225122DB00BDDDFB /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		9FAE0132E7389477D84B88F8 /* Pods-Parks Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parks Events.release.xcconfig"; path = "Target Support Files/Pods-Parks Events/Pods-Parks Events.release.xcconfig"; sourceTree = "<group>"; };
 		9FB30B3622345A71007A530C /* Parks Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parks Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB30B3922345A71007A530C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9FB30B3B22345A71007A530C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FB30B3E22345A71007A530C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FB30B4022345A73007A530C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FB30B4322345A73007A530C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB30B4D2238681B007A530C /* TodaysEventsTableViewController.swift */,
-				9FB30B3B22345A71007A530C /* ViewController.swift */,
+				9F3B913F225122DB00BDDDFB /* DetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3B9140225122DB00BDDDFB /* DetailTableViewController.swift in Sources */,
 				9FB30B4E2238681B007A530C /* TodaysEventsTableViewController.swift in Sources */,
-				9FB30B3C22345A71007A530C /* ViewController.swift in Sources */,
 				9FB30B5022403CE9007A530C /* APICalls.swift in Sources */,
 				9FB30B3A22345A71007A530C /* AppDelegate.swift in Sources */,
 			);
