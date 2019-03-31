@@ -6,6 +6,7 @@ target 'Parks Events' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'APParallaxHeader'
 
   # Pods for Parks Events
 

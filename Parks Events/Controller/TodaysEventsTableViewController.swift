@@ -84,12 +84,14 @@ class TodaysEventsTableViewController: UITableViewController {
             }
             
         })
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         alertController.addAction(somethingAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:{})
     
     }
+    
     /*
      // MARK: - Navigation
      
