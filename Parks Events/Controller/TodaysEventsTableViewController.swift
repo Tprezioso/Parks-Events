@@ -36,6 +36,15 @@ class TodaysEventsTableViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let someDateTime = formatter.string(from: date)
+        
+        var newDate = Date()
+        
+        if formatter.string(from: newDate) != someDateTime {
+            navigationItem.title = someDateTime
+        } else {
+            navigationItem.title = "Todays Park Events"
+        }
+
         apiURL.append(someDateTime)
     }
     
@@ -44,13 +53,11 @@ class TodaysEventsTableViewController: UITableViewController {
             self.apiCall.currentDayEventsCall(url: self.apiURL) { (json) in
                 self.eventsArray = [["" : ""]]
                 self.eventsArray = json!
-                print(self.eventsArray)
+
                 if self.eventsArray == [] as! [[String : String]] {
                     self.navigationItem.title = "No Events Today"
-                } else {
-                    self.navigationItem.title = "Todays Park Events"
                 }
-                
+//
                 if self.refreshController.isRefreshing {
                     self.refreshController.endRefreshing()
                 }
@@ -74,20 +81,20 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
-        let myDatePicker: UIDatePicker = UIDatePicker()
+        let searchDatePicker: UIDatePicker = UIDatePicker()
         // setting properties of the datePicker
-        myDatePicker.timeZone = NSTimeZone.local
+        searchDatePicker.timeZone = NSTimeZone.local
         
-        myDatePicker.frame = CGRect(origin: CGPoint(x: 0,y :15), size: CGSize(width: 270, height: 200))
+        searchDatePicker.frame = CGRect(origin: CGPoint(x: 0,y :15), size: CGSize(width: 270, height: 200))
         
-        myDatePicker.datePickerMode = UIDatePicker.Mode.date
+        searchDatePicker.datePickerMode = UIDatePicker.Mode.date
         
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
-        alertController.view.addSubview(myDatePicker)
+        alertController.view.addSubview(searchDatePicker)
         let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
             DispatchQueue.main.async {
-                self.getTodaysDateForURL(date: myDatePicker.date)
+                self.getTodaysDateForURL(date: searchDatePicker.date)
                 self.getParksEvent()
                 
             }
