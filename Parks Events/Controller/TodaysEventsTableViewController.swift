@@ -14,23 +14,44 @@ class TodaysEventsTableViewController: UITableViewController {
     let date = Date()
     var eventsArray = [[String : String]]()
     private let apiCall = APICalls()
+    @objc var refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDateForURL()
+        getTodaysDateForURL()
         getParksEvent()
-        
+        refreshController.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshController.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.tableView.addSubview(refreshController)
+
     }
     
-    func getDateForURL() {
+    @objc func refresh(_ sender: Any) {
+        // Call webservice here after reload tableview.
+    //        getDateForURL()
+//        self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        let someDateTime = formatter.string(from: date)
+//        apiURL.append(someDateTime)
+        getTodaysDateForURL()
+        getParksEvent()
+//        self.tableView.reloadData()
+//        self.refresh.endRefreshing()
+
+    }
+    
+    
+    func getTodaysDateForURL() {
+        self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let someDateTime = formatter.string(from: date)
         apiURL.append(someDateTime)
-
     }
     
     func getParksEvent() {
+//        getDateForURL()
         DispatchQueue.main.async {
             self.apiCall.currentDayEventsCall(url: self.apiURL) { (json) in
                 self.eventsArray = [["" : ""]]
@@ -39,7 +60,11 @@ class TodaysEventsTableViewController: UITableViewController {
                 if self.eventsArray == [] as! [[String : String]] {
                     self.navigationItem.title = "No Events Today"
                 } else {
-                    self.navigationItem.title = "Park Events"
+                    self.navigationItem.title = "Todays Park Events"
+                }
+                
+                if self.refreshController.isRefreshing {
+                    self.refreshController.endRefreshing()
                 }
 
                 self.tableView.reloadData()

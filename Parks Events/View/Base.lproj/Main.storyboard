@@ -82,17 +82,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU9-QO-xea">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
+                                            <rect key="frame" x="16" y="8" width="343" height="27.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="yU9-QO-xea" firstAttribute="leading" secondItem="GQu-aK-xEQ" secondAttribute="leading" constant="8" id="GV7-jR-uAk"/>
-                                        <constraint firstItem="yU9-QO-xea" firstAttribute="top" secondItem="GQu-aK-xEQ" secondAttribute="top" id="L6M-wz-PrE"/>
-                                        <constraint firstAttribute="bottom" secondItem="yU9-QO-xea" secondAttribute="bottom" id="w3N-ko-FMT"/>
-                                        <constraint firstAttribute="trailing" secondItem="yU9-QO-xea" secondAttribute="trailing" constant="8" id="zDH-sC-G9B"/>
+                                        <constraint firstAttribute="trailing" secondItem="yU9-QO-xea" secondAttribute="trailing" constant="16" id="RUx-fJ-gAy"/>
+                                        <constraint firstItem="yU9-QO-xea" firstAttribute="leading" secondItem="GQu-aK-xEQ" secondAttribute="leading" constant="16" id="ZhO-tn-XR0"/>
+                                        <constraint firstItem="yU9-QO-xea" firstAttribute="top" secondItem="GQu-aK-xEQ" secondAttribute="top" constant="8" id="tBU-EH-62X"/>
+                                        <constraint firstAttribute="bottom" secondItem="yU9-QO-xea" secondAttribute="bottom" constant="8" id="wdP-zB-84o"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
