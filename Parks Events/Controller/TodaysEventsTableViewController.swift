@@ -18,7 +18,7 @@ class TodaysEventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTodaysDateForURL()
+        getTodaysDateForURL(date: date)
         getParksEvent()
         refreshController.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshController.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
@@ -27,22 +27,11 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     @objc func refresh(_ sender: Any) {
-        // Call webservice here after reload tableview.
-    //        getDateForURL()
-//        self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        let someDateTime = formatter.string(from: date)
-//        apiURL.append(someDateTime)
-        getTodaysDateForURL()
+        getTodaysDateForURL(date: date)
         getParksEvent()
-//        self.tableView.reloadData()
-//        self.refresh.endRefreshing()
-
     }
     
-    
-    func getTodaysDateForURL() {
+    func getTodaysDateForURL(date: Date) {
         self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -51,7 +40,6 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     func getParksEvent() {
-//        getDateForURL()
         DispatchQueue.main.async {
             self.apiCall.currentDayEventsCall(url: self.apiURL) { (json) in
                 self.eventsArray = [["" : ""]]
@@ -93,17 +81,13 @@ class TodaysEventsTableViewController: UITableViewController {
         myDatePicker.frame = CGRect(origin: CGPoint(x: 0,y :15), size: CGSize(width: 270, height: 200))
         
         myDatePicker.datePickerMode = UIDatePicker.Mode.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
         alertController.view.addSubview(myDatePicker)
         let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
             DispatchQueue.main.async {
-                let selectedDate = dateFormatter.string(from: myDatePicker.date)
-                self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
-                self.apiURL.append(selectedDate)
+                self.getTodaysDateForURL(date: myDatePicker.date)
                 self.getParksEvent()
                 
             }
