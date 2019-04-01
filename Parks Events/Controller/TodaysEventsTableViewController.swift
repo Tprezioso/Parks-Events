@@ -37,7 +37,7 @@ class TodaysEventsTableViewController: UITableViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         let someDateTime = formatter.string(from: date)
         
-        var newDate = Date()
+        let newDate = Date()
         
         if formatter.string(from: newDate) != someDateTime {
             navigationItem.title = someDateTime
@@ -57,7 +57,7 @@ class TodaysEventsTableViewController: UITableViewController {
                 if self.eventsArray == [] as! [[String : String]] {
                     self.navigationItem.title = "No Events Today"
                 }
-//
+
                 if self.refreshController.isRefreshing {
                     self.refreshController.endRefreshing()
                 }
