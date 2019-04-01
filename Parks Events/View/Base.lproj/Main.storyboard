@@ -74,13 +74,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailEventCell" rowHeight="44" id="eMe-Cm-cQ4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailEventCell" rowHeight="44" id="eMe-Cm-cQ4" customClass="detailCell" customModule="Parks_Events" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eMe-Cm-cQ4" id="GQu-aK-xEQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU9-QO-xea">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yU9-QO-xea" firstAttribute="leading" secondItem="GQu-aK-xEQ" secondAttribute="leading" constant="8" id="GV7-jR-uAk"/>
+                                        <constraint firstItem="yU9-QO-xea" firstAttribute="top" secondItem="GQu-aK-xEQ" secondAttribute="top" id="L6M-wz-PrE"/>
+                                        <constraint firstAttribute="bottom" secondItem="yU9-QO-xea" secondAttribute="bottom" id="w3N-ko-FMT"/>
+                                        <constraint firstAttribute="trailing" secondItem="yU9-QO-xea" secondAttribute="trailing" constant="8" id="zDH-sC-G9B"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="yU9-QO-xea" id="oby-1o-W1C"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -91,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEO-Ie-fLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2423" y="142"/>
+            <point key="canvasLocation" x="2421.5999999999999" y="141.67916041979012"/>
         </scene>
     </scenes>
 </document>
