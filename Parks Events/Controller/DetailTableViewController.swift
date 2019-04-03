@@ -15,22 +15,25 @@ class detailCell: UITableViewCell {
 
 class DetailTableViewController: UITableViewController {
 
+    // MARK: - Global Properties
     var detailEventArray = [String : String]()
     var eventDetails = [String]()
     private let apiCall = APICalls()
     var imageID = ""
     var eventimageArray = [[String : String]]()
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print(">>>>>>>>>>>>>>>>>>>>>>>> \(detailEventArray)")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
-        
         setUpArray()
         getImageForEvent()
+
     }
     
+    // MARK: - Image API Call
     func getImageForEvent() {
         DispatchQueue.main.async {
             self.apiCall.imageForEvent(imageID: self.imageID, completion: { (json) in
@@ -41,6 +44,7 @@ class DetailTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Setup Array for Display
     func setUpArray()  {
         imageID = (detailEventArray["event_id"] ?? "No ID")
         print(imageID)
@@ -55,7 +59,6 @@ class DetailTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return eventDetails.count
