@@ -10,7 +10,7 @@ import UIKit
 
 class TodaysEventsTableViewController: UITableViewController {
 
-    var apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
+    var itemForURLSearch = ""
     let date = Date()
     var eventsArray = [[String : String]]()
     private let apiCall = APICalls()
@@ -32,7 +32,7 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     func getTodaysDateForURL(date: Date) {
-        self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
+        //self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let someDateTime = formatter.string(from: date)
@@ -45,12 +45,12 @@ class TodaysEventsTableViewController: UITableViewController {
             navigationItem.title = "Todays Park Events"
         }
 
-        apiURL.append(someDateTime)
+        itemForURLSearch.append(someDateTime)
     }
     
     func getParksEvent() {
         DispatchQueue.main.async {
-            self.apiCall.currentDayEventsCall(url: self.apiURL) { (json) in
+            self.apiCall.currentDayEventsCall(searchID: self.itemForURLSearch) { (json) in
                 self.eventsArray = [["" : ""]]
                 self.eventsArray = json!
 
