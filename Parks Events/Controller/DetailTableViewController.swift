@@ -17,16 +17,33 @@ class DetailTableViewController: UITableViewController {
 
     var detailEventArray = [String : String]()
     var eventDetails = [String]()
+    private let apiCall = APICalls()
+    var imageID = ""
+    var eventimageArray = [[String : String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(">>>>>>>>>>>>>>>>>>>>>>>> \(detailEventArray)")
+        print(">>>>>>>>>>>>>>>>>>>>>>>> \(detailEventArray)")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+        
         setUpArray()
+        getImageForEvent()
+    }
+    
+    func getImageForEvent() {
+        DispatchQueue.main.async {
+            self.apiCall.imageForEvent(imageID: self.imageID, completion: { (json) in
+//                self.eventimageArray = [["" : ""]]
+//                self.eventimageArray = json!
+                print(json ?? "NO IMAGE")
+            })
+        }
     }
     
     func setUpArray()  {
+        imageID = (detailEventArray["event_id"] ?? "No ID")
+        print(imageID)
         eventDetails.append(detailEventArray["title"] ?? "No Title")
         eventDetails.append(detailEventArray["start_time"] ?? "No Start Time")
         eventDetails.append(detailEventArray["end_time"] ?? "No End Time")
@@ -34,7 +51,7 @@ class DetailTableViewController: UITableViewController {
         eventDetails.append(detailEventArray["cost_description"] ?? "No Cost")
         eventDetails.append(detailEventArray["location_description"] ?? "No Location")
         eventDetails.append(detailEventArray["url"] ?? "No URL" )
-        print(eventDetails)
+//        print(eventDetails)
     }
 
     // MARK: - Table view data source

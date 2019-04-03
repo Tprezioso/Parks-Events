@@ -32,7 +32,7 @@ class TodaysEventsTableViewController: UITableViewController {
     }
     
     func getTodaysDateForURL(date: Date) {
-        //self.apiURL = "https://data.cityofnewyork.us/resource/fudw-fgrp.json?date="
+        itemForURLSearch = ""
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let someDateTime = formatter.string(from: date)
