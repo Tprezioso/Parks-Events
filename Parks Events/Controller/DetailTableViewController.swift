@@ -37,8 +37,8 @@ class DetailTableViewController: UITableViewController {
     func getImageForEvent() {
         DispatchQueue.main.async {
             self.apiCall.imageForEvent(imageID: self.imageID, completion: { (json) in
-//                self.eventimageArray = [["" : ""]]
-//                self.eventimageArray = json!
+                self.eventimageArray = [["" : ""]]
+                self.eventimageArray = json!
                 print(json ?? "NO IMAGE")
             })
         }
@@ -46,15 +46,15 @@ class DetailTableViewController: UITableViewController {
     
     // MARK: - Setup Array for Display
     func setUpArray()  {
+        let detailsForDisplay = ["title","start_time","end_time","description","cost_description","location_description","url",]
+        
         imageID = (detailEventArray["event_id"] ?? "No ID")
         print(imageID)
-        eventDetails.append(detailEventArray["title"] ?? "No Title")
-        eventDetails.append(detailEventArray["start_time"] ?? "No Start Time")
-        eventDetails.append(detailEventArray["end_time"] ?? "No End Time")
-        eventDetails.append(detailEventArray["description"] ?? "No Description" )
-        eventDetails.append(detailEventArray["cost_description"] ?? "No Cost")
-        eventDetails.append(detailEventArray["location_description"] ?? "No Location")
-        eventDetails.append(detailEventArray["url"] ?? "No URL" )
+        
+        for detail in detailsForDisplay {
+            eventDetails.append(detailEventArray["\(detail)"] ?? "No Data")
+        }
+        
 //        print(eventDetails)
     }
 
