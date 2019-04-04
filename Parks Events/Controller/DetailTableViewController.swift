@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import APParallaxHeader
 
 class detailCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
@@ -25,7 +26,7 @@ class DetailTableViewController: UITableViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(">>>>>>>>>>>>>>>>>>>>>>>> \(detailEventArray)")
+//        print(">>>>>>>>>>>>>>>>>>>>>>>> \(detailEventArray)")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         setUpArray()
