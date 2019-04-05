@@ -7,6 +7,7 @@ target 'Parks Events' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'APParallaxHeader'
+  pod 'ParallaxHeader'
 
   # Pods for Parks Events
 

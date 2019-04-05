@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import APParallaxHeader
+import ParallaxHeader
 
 class detailCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
@@ -31,7 +31,12 @@ class DetailTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 600
         setUpArray()
         getImageForEvent()
-
+        
+//        let bar:UINavigationBar! =  self.navigationController?.navigationBar
+//        self.title = "Whatever..."
+//        bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        bar.shadowImage = UIImage()
+//        bar.alpha = 0.0
     }
     
     // MARK: - Image API Call
@@ -41,12 +46,21 @@ class DetailTableViewController: UITableViewController {
                 self.eventimageArray = [["" : ""]]
                 self.eventimageArray = json!
                 print(json ?? "NO IMAGE")
-                let url = URL(string: self.eventimageArray[0]["path_2"]!)!
-                let data = try? Data(contentsOf: url)
-                
-                if let imageData = data {
-                    let image = UIImage(data: imageData)
-                    self.tableView.addParallax(with: image, andHeight: 100)
+                if json != [] {
+                    let url = URL(string: self.eventimageArray[0]["path_2"]!)!
+                    let data = try? Data(contentsOf: url)
+                    
+                    if let imageData = data {
+                        let imageView = UIImageView()
+                        imageView.image = UIImage(data: imageData)
+                        imageView.contentMode = .scaleAspectFit
+                        
+                        self.tableView.parallaxHeader.view = imageView
+                        self.tableView.parallaxHeader.height = 400
+                        self.tableView.parallaxHeader.minimumHeight = 0
+                        self.tableView.parallaxHeader.mode = .fill
+                    }
+
                 }
                 
 
@@ -64,7 +78,7 @@ class DetailTableViewController: UITableViewController {
         for detail in detailsForDisplay {
             eventDetails.append(detailEventArray["\(detail)"] ?? "No Data")
         }
-//        print(eventDetails)
+        print(eventDetails)
     }
 
     // MARK: - Table view data source
