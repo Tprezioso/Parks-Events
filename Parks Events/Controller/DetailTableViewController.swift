@@ -41,6 +41,15 @@ class DetailTableViewController: UITableViewController {
                 self.eventimageArray = [["" : ""]]
                 self.eventimageArray = json!
                 print(json ?? "NO IMAGE")
+                let url = URL(string: self.eventimageArray[0]["path_2"]!)!
+                let data = try? Data(contentsOf: url)
+                
+                if let imageData = data {
+                    let image = UIImage(data: imageData)
+                    self.tableView.addParallax(with: image, andHeight: 100)
+                }
+                
+
             })
         }
     }
@@ -51,11 +60,10 @@ class DetailTableViewController: UITableViewController {
         
         imageID = (detailEventArray["event_id"] ?? "No ID")
         print(imageID)
-        
+
         for detail in detailsForDisplay {
             eventDetails.append(detailEventArray["\(detail)"] ?? "No Data")
         }
-        
 //        print(eventDetails)
     }
 
