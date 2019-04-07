@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kanna
 
 class TodaysEventsTableViewController: UITableViewController {
 
@@ -25,6 +26,7 @@ class TodaysEventsTableViewController: UITableViewController {
         refreshController.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshController.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.tableView.addSubview(refreshController)
+        self.apiCall.scrapeNYCParksEvent()
 
     }
     
@@ -122,5 +124,5 @@ class TodaysEventsTableViewController: UITableViewController {
         
         detailViewController.detailEventArray = eventsArray[index]
     }
-    
+        
 }

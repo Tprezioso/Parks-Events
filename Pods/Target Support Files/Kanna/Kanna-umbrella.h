@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "UIScrollView+APParallaxHeader.h"
+#import "Kanna.h"
 
-FOUNDATION_EXPORT double APParallaxHeaderVersionNumber;
-FOUNDATION_EXPORT const unsigned char APParallaxHeaderVersionString[];
+FOUNDATION_EXPORT double KannaVersionNumber;
+FOUNDATION_EXPORT const unsigned char KannaVersionString[];
 
