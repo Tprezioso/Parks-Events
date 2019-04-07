@@ -31,12 +31,7 @@ class DetailTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 600
         setUpArray()
         getImageForEvent()
-        
-//        let bar:UINavigationBar! =  self.navigationController?.navigationBar
-//        self.title = "Whatever..."
-//        bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//        bar.shadowImage = UIImage()
-//        bar.alpha = 0.0
+
     }
     
     // MARK: - Image API Call
@@ -70,7 +65,7 @@ class DetailTableViewController: UITableViewController {
     
     // MARK: - Setup Array for Display
     func setUpArray()  {
-        let detailsForDisplay = ["title","start_time","end_time","description","cost_description","location_description","url",]
+        let detailsForDisplay = ["title","start_time","end_time","snippet","cost_description","location_description","url",]
         
         imageID = (detailEventArray["event_id"] ?? "No ID")
         print(imageID)
@@ -78,7 +73,7 @@ class DetailTableViewController: UITableViewController {
         for detail in detailsForDisplay {
             eventDetails.append(detailEventArray["\(detail)"] ?? "No Data")
         }
-        print(eventDetails)
+//        print(eventDetails)
     }
 
     // MARK: - Table view data source
