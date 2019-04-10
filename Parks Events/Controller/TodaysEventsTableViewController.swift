@@ -17,6 +17,8 @@ class TodaysEventsTableViewController: UITableViewController {
     var eventsArray = [[String : String]]()
     private let apiCall = APICalls()
     @objc var refreshController = UIRefreshControl()
+    var arrayForEvents = [""]
+    
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -26,7 +28,6 @@ class TodaysEventsTableViewController: UITableViewController {
         refreshController.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshController.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.tableView.addSubview(refreshController)
-        self.apiCall.scrapeNYCParksEvent()
 
     }
     
@@ -52,6 +53,13 @@ class TodaysEventsTableViewController: UITableViewController {
         }
 
         itemForURLSearch.append(someDateTime)
+            self.apiCall.scrapeNYCParksEvent(date: someDateTime) { (json) in
+                self.arrayForEvents = json
+                print(">>>>>>>>>>>>>>>>>>\(json)")
+            }
+
+
+
     }
     
     // MARK: - API Call
