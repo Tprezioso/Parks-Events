@@ -55,7 +55,7 @@ class TodaysEventsTableViewController: UITableViewController {
         itemForURLSearch.append(someDateTime)
             self.apiCall.scrapeNYCParksEvent(date: someDateTime) { (json) in
                 self.arrayForEvents = json
-                print(">>>>>>>>>>>>>>>>>>\(json)")
+                print(">>>>>>>>>>>>>>>>>>\(self.arrayForEvents)")
             }
 
 
